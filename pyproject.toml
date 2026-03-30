@@ -30,7 +30,7 @@ dev = [
 package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
-where = ["dags/etl/src"]
+where = ["src"]
 include = ["worker*", "infrastructure*", "dashboard*"]
 
 [tool.ruff]
@@ -57,8 +57,8 @@ ignore_missing_imports = true
 format = "ruff format ."
 fix = "ruff check . --fix"
 commit = "pre-commit run --all-files"
-typecheck = "mypy dags/etl/src"
-security = "bandit -r dags/etl/src -s B101"
+typecheck = "mypy src"
+security = "bandit -r src -s B101"
 audit = "pip-audit"
 ci = """
 task format
