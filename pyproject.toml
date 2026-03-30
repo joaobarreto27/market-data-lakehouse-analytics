@@ -8,6 +8,7 @@ requires-python = ">=3.11,<3.13"
 authors = [
   { name = "joaobarreto27", email = "joao.vito1951@gmail.com" }
 ]
+dependencies = ["streamlit (>=1.55.0,<2.0.0)"]
 
 [tool.poetry.dependencies]
 pyspark = "3.5.4"
