@@ -1,11 +1,4 @@
-# 📊 Data Engineering Project
-
-## 🌎 Choose your language / Escolha seu idioma
-
-* 🇺🇸 [English](README.en-US.md)
-* 🇧🇷 [Português](README.pt-BR.md)
-
----
+# 📊 Data Engineering Project (English)
 
 ## 🚀 Overview
 
@@ -28,8 +21,6 @@ This project demonstrates a complete data pipeline using modern data engineering
 * Performance optimization
 * Interactive dashboard with Streamlit
 
----
-
 ## 📦 How to run
 
 ```bash
@@ -41,13 +32,9 @@ poetry install
 poetry run streamlit run src/infrastructure/report/dashboard/app.py
 ```
 
----
-
-## 📍 Notes
-
-This repository uses a modular approach:
+## 🛠 Project structure
 
 * `infrastructure/report/worker` - ETL process
-* `infrastructure/report/repository` - repository design
-* `infrastructure/report/utils` - shared utilities
+* `infrastructure/report/repository` - repository pattern and data access
+* `infrastructure/report/utils` - shared utilities (DB connection, query loading)
 * `infrastructure/report/dashboard` - Streamlit dashboard
