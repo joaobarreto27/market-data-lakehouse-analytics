@@ -8,23 +8,19 @@ requires-python = ">=3.11,<3.13"
 authors = [
   { name = "joaobarreto27", email = "joao.vito1951@gmail.com" }
 ]
-dependencies = ["streamlit (>=1.55.0,<2.0.0)"]
-
-[tool.poetry.dependencies]
-pyspark = "3.5.4"
-python-dotenv = "^1.2.2"
-pyarrow = "^23.0.1"
-setuptools = "^82.0.1"
-boto3 = "^1.42.78"
-
-[project.optional-dependencies]
-dev = [
-    "ruff (>=0.15.8,<0.16.0)",
-    "mypy (>=1.19.1,<2.0.0)",
-    "taskipy (>=1.14.1,<2.0.0)",
-    "pre-commit (>=4.5.1,<5.0.0)",
-    "pip-audit (>=2.10.0,<3.0.0)",
-    "bandit (>=1.9.4,<2.0.0)"
+dependencies = [
+  "requests>=2.32.5,<3.0.0",
+  "pyspark (==3.5.4)",
+  "pydantic>=2.12.5,<3.0.0",
+  "pandera>=0.28.1,<0.29.0",
+  "pandas>=2.3.3,<3.0.0",
+  "python-dotenv>=1.2.1,<2.0.0",
+  "pyarrow (>=23.0.0,<24.0.0)",
+  "setuptools (>=82.0.1,<83.0.0)",
+  "streamlit (>=1.55.0,<2.0.0)",
+  "boto3 (>=1.42.79,<2.0.0)",
+  "botocore[crt] (>=1.42.79,<2.0.0)",
+  "watchdog (>=6.0.0,<7.0.0)"
 ]
 
 [tool.setuptools]

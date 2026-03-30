@@ -55,6 +55,24 @@ class PySparkDataReader:
         )
         return df
 
+    def read_from_query(
+        self, query_text: str, db_connection: ConnectionDatabase
+    ) -> DataFrame:
+        """Execute a raw SQL query through JDBC and return a DataFrame."""
+        if not query_text or not query_text.strip():
+            raise ValueError("Query text cannot be empty")
+
+        jdbc_url, properties = db_connection.connect_with_retry()
+        if not jdbc_url or not properties:
+            raise RuntimeError("Invalid JDBC credentials")
+
+        wrapped_query = f"({query_text}) AS custom_query"
+
+        df = self.spark.read.jdbc(
+            url=jdbc_url, table=wrapped_query, properties=properties
+        )
+        return df
+
     def read_from_path_local(self, path_file: str) -> DataFrame:
         """Read a parquet file from a local filesystem path.
 

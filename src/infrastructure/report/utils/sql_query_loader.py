@@ -56,6 +56,11 @@ class SqlQueryLoader:
         )
 
         if not path.is_file():
+            path = self._base_dir.parents[0].joinpath(
+                self.layer, self.sql_file, "sql", "query", f"{self.sql_file}.sql"
+            )
+
+        if not path.is_file():
             msg = f"SQL file not found: {path}"
             logger.error(msg)
             raise FileNotFoundError(msg)
